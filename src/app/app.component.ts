@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sudria-frontend';
+
+  list: string[] = ['1', '2', '3' ];
+  names:string[] = new Array('Mary','Tom','Jack','Jill');
 }
