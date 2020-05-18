@@ -10,10 +10,12 @@ import { UpdateComponent } from './pages/update/update.component';
 import { HomeComponent } from './pages/home/home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailsComponent } from './pages/consult/details/details.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent  },
   { path: 'consult', component: ConsultComponent },
+  { path: 'consult/{id}', component: DetailsComponent },
   { path: 'create', component: CreateComponent },
   { path: 'delete', component: DeleteComponent },
   { path: 'update', component: UpdateComponent }
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     CreateComponent,
     DeleteComponent,
     UpdateComponent,
-    HomeComponent
+    HomeComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
