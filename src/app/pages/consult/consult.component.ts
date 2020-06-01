@@ -23,4 +23,10 @@ export class ConsultComponent implements OnInit {
   onSelect(ressource: Ressource): void {
     this.selectedRessource = ressource;
   }
+
+  deleteRessource(id: number): void {
+    this.apiService.deleteRessource(id).subscribe((res) => {
+      // console.log(res);
+    });
+  }
 }

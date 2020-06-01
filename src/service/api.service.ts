@@ -29,7 +29,20 @@ public createRessource(ressource: Ressource) {
 
 public updateRessource(ressource: Ressource) {}
 
-public deleteRessource(id: number) {}
+public deleteRessource(id: number) {
+  const username = 'admin';
+  const password = 'password';
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      Authorization: 'Basic ' +  btoa(username + ':' + password)
+    })
+  };
+
+  return this.httpClient.delete<Ressource>(`${this.apiURL}/animals/` + id, httpOptions)
+    .pipe(map(resp => {
+  }));
+}
 
 public getRessourceById(id: number) {}
 
