@@ -12,18 +12,18 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) {}
 
-
-
 public createRessource(ressource: Ressource) {
-  // return this.httpClient.post<any>(`${this.apiURL}/users/authenticate`, {username, password})
-  // .pipe(map(res => {
-  //     return res;
-  // }));
-  const username = 'user';
+  const username = 'admin';
   const password = 'password';
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      Authorization: 'Basic ' +  btoa(username + ':' + password)
+    })
+  };
 
-  return this.httpClient.post<any>(`${this.apiURL}/users/authenticate`, { username, password })
-  .pipe(map(resp => {
+  return this.httpClient.post<Ressource>(`${this.apiURL}/animals`, ressource, httpOptions)
+    .pipe(map(resp => {
   }));
 }
 
@@ -36,23 +36,12 @@ public getRessourceById(id: number) {}
 public getRessources(url?: string) {
   const username = 'user';
   const password = 'password';
-
-
   const httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
       Authorization: 'Basic ' +  btoa(username + ':' + password)
     })
   };
-
-  // const myHeaders  = new HttpHeaders();
-  // myHeaders .append('Authorization', 'Basic ' + btoa(username + ':' + password));
-  // myHeaders .append('Content-Type', 'application/json');
-
   return this.httpClient.get<Ressource[]>(`${this.apiURL}/animals`, httpOptions);
-  // .pipe(map(resp => {
-  //   debugger;
-  //   console.log(resp);
-  // }));
 }
 }
