@@ -1,28 +1,47 @@
 <div class="container">
-<form [formGroup]="ressourceForm" (ngSubmit)="onSubmit(ressourceForm.value)">
+  <form [formGroup]="createForm" (ngSubmit)="onSubmit(createForm.value)">
 
-  <div>
-    <label for="name">
-      Name
-    </label>
-    <input id="name" type="text" formControlName="name">
+    <!-- <div>
+      <label for="name">
+        Name
+      </label>
+      <input id="name" type="text" formControlName="name">
+    </div>
+
+    <div>
+      <label for="age">
+        Age
+      </label>
+      <input id="age" type="text" formControlName="age">
+    </div>
+
+    <div>
+      <label for="category">
+        Category
+      </label>
+      <input id="category" type="text" formControlName="category">
+    </div> -->
+
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Nom de la ressource" formControlName="name">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Age</mat-label>
+        <input matInput placeholder="Age de la ressource" formControlName="age">
+      </mat-form-field>
+  </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Category</mat-label>
+        <input matInput placeholder="Category de la ressource" formControlName="category">
+      </mat-form-field>
   </div>
 
-  <div>
-    <label for="age">
-      Age
-    </label>
-    <input id="age" type="text" formControlName="age">
-  </div>
+    <button class="button" mat-raised-button color="primary" type="submit">Créer ressource</button>
 
-  <div>
-    <label for="category">
-      Category
-    </label>
-    <input id="category" type="text" formControlName="category">
-  </div>
-
-  <button class="button" type="submit">Créer ressource</button>
-
-</form>
+  </form>
 </div>

@@ -12,12 +12,26 @@
   <h2>Détails</h2>
   <div class="details">
     <div *ngIf="selectedRessource">
-      <!-- <h2>{{selectedRessource.name | uppercase}}</h2> -->
       <h2>{{selectedRessource.name }}</h2>
-      <div><span>Id : </span>{{selectedRessource.id}}</div>
-      <div><span>Name : </span>{{selectedRessource.name}}</div>
-      <div><span>Age : </span>{{selectedRessource.age}}</div>
-      <div><span>Category : </span>{{selectedRessource.category}}</div>
-      <button class="button" (click)="deleteRessource(selectedRessource.id)" >Supprimer</button>
+      <mat-form-field class="example-full-width">
+        <mat-label>Id</mat-label>
+        <input matInput placeholder="id de la ressource" value="{{selectedRessource.id}}">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Nom de la ressource" value="{{selectedRessource.name}}">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Age</mat-label>
+        <input matInput placeholder="Age de la ressource" value="{{selectedRessource.age}}">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Category</mat-label>
+        <input matInput placeholder="Category de la ressource" value="{{selectedRessource.category}}">
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" (click)="updateRessource(selectedRessource.id)" >Modifier</button>
+        <button mat-raised-button color="warn" (click)="deleteRessource(selectedRessource.id)" >Supprimer</button>
+      </div>
     </div>
   </div>
