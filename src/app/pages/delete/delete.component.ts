@@ -26,11 +26,14 @@ export class DeleteComponent implements OnInit {
   onSubmit(ressource: Ressource) {
     this.apiService.deleteRessource(ressource.id)
     .subscribe(
-      (res) => {
-              console.log(res);
-              this.deleteForm.reset();
-              this.router.navigate(['/consult']);
-            });
-    }
+      data => {
+        this.deleteForm.reset();
+        this.router.navigate(['/consult']);
+      },
+        error => {
+          alert('Error' + error.error);
+          console.log('Error occured', error);
+        }
+    ); }
 
 }
