@@ -13,7 +13,7 @@ export class ConsultComponent implements OnInit {
   selectedRessource: Ressource;
 
   constructor(private apiService: ApiService,
-              private router: Router ) {}
+              private router: Router) {}
 
   ngOnInit(): void {
      this.apiService.getRessources().subscribe((res) => {
@@ -35,5 +35,5 @@ export class ConsultComponent implements OnInit {
 
   updateRessource(id: number) {
       this.router.navigate(['/update']);
-    }
+  }
 }

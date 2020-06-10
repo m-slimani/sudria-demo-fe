@@ -31,14 +31,16 @@ export class CreateComponent implements OnInit {
   onSubmit(ressource: Ressource) {
     this.apiService.createRessource(ressource)
           .subscribe(
+            //success
             data => {
-              this.createForm.reset();
               this.router.navigate(['/consult']);
             },
-              error => {
-                alert('Error' + error.error);
-                console.log('Error occured', error);
-              }
+            // error
+            error => {
+              alert('Error' + error.error);
+              console.log('Error occured', error);
+              //afficher message sur IHM
+            }
           );
     }
 

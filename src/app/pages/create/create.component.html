@@ -1,27 +1,6 @@
 <div class="container">
   <form [formGroup]="createForm" (ngSubmit)="onSubmit(createForm.value)">
 
-    <!-- <div>
-      <label for="name">
-        Name
-      </label>
-      <input id="name" type="text" formControlName="name">
-    </div>
-
-    <div>
-      <label for="age">
-        Age
-      </label>
-      <input id="age" type="text" formControlName="age">
-    </div>
-
-    <div>
-      <label for="category">
-        Category
-      </label>
-      <input id="category" type="text" formControlName="category">
-    </div> -->
-
     <div>
       <mat-form-field class="example-full-width">
         <mat-label>Name</mat-label>
@@ -41,7 +20,7 @@
       </mat-form-field>
   </div>
 
-    <button class="button" mat-raised-button color="primary" type="submit">Créer ressource</button>
+    <button mat-raised-button color="primary" type="submit">Créer ressource</button>
 
   </form>
 </div>
